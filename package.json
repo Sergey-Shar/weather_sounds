@@ -8,19 +8,9 @@
 		"build": "npx webpack --config webpack.config.prod.js",
 		"build:dev": "npx webpack --config webpack.config.dev.js",
 		"lint": "npx eslint ./",
-		"lint:fix": "npm run lint -- --fix",
-		"prepare": "husky install"
+		"lint:fix": "npm run lint -- --fix"
 	},
-	"husky": {
-		"hooks": {
-			"pre-commit": "lint-staged"
-		}
-	},
-	"lint-staged": {
-		"*.(js)": [
-			"npm run --silent lint:fix"
-		]
-	},
+	
 	"keywords": [],
 	"author": "",
 	"license": "ISC",
