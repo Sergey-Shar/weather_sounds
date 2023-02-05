@@ -7,7 +7,7 @@
 		"start": "npx webpack serve --config webpack.config.dev.js",
 		"build": "npx webpack --config webpack.config.prod.js",
 		"build:dev": "npx webpack --config webpack.config.dev.js",
-		"lint": "eslint --ext .js",
+		"lint": "npx eslint ./",
 		"lint:fix": "npm run lint -- --fix",
 		"prepare": "husky install"
 	},
