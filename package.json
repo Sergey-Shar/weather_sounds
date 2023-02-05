@@ -7,19 +7,6 @@
 		"start": "npx webpack serve --config webpack.config.dev.js",
 		"build": "npx webpack --config webpack.config.prod.js",
 		"build:dev": "npx webpack --config webpack.config.dev.js",
-		"lint": "npx eslint ./",
-		"lint:fix": "npm run lint -- --fix",
-		"prepare": "husky install"
-	},
-	"husky": {
-		"hooks": {
-			"pre-commit": "lint-staged"
-		}
-	},
-	"lint-staged": {
-		"*.(js)": [
-			"npm run --silent lint:fix"
-		]
 	},
 	"keywords": [],
 	"author": "",
@@ -38,8 +25,6 @@
 		"eslint-plugin-promise": "^6.1.1",
 		"eslint-webpack-plugin": "^4.0.0",
 		"html-webpack-plugin": "^5.5.0",
-		"husky": "^8.0.0",
-		"lint-staged": "^13.1.0",
 		"mini-css-extract-plugin": "^2.7.2",
 		"postcss": "^8.4.21",
 		"postcss-loader": "^7.0.2",

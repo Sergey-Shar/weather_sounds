@@ -8,17 +8,6 @@ module.exports = merge(configCommon, {
   devtool: 'source-map',
   plugins: [],
   optimization: {
-    minimizer: [new CssMinimizerPlugin(), new TerserPlugin()],
-    splitChunks: {
-      cacheGroups: {
-        default: false,
-        vendors: false,
-        vendor: {
-          chunks: 'all',
-          name: 'vendor',
-          test: /node_modules/
-        }
-      }
-    }
+    minimizer: [new CssMinimizerPlugin(), new TerserPlugin()]
   }
 })

@@ -5,8 +5,7 @@ const path = require('path')
 const DIST = 'dist'
 
 module.exports = {
-  context: path.resolve(__dirname, 'src/scripts'),
-  entry: './index.js',
+  entry: './src/scripts/index.js',
   output: {
     filename: '[name].[contenthash].js',
     path: path.resolve(__dirname, DIST),
@@ -55,17 +54,17 @@ module.exports = {
           },
           'sass-loader'
         ]
-      },
-      {
-        test: /\.m?js$/,
-        exclude: /(node_modules|bower_components)/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: [['@babel/preset-env', { targets: 'defaults' }]]
-          }
-        }
       }
+      // {
+      //   test: /\.m?js$/,
+      //   exclude: /(node_modules|bower_components)/,
+      //   use: {
+      //     loader: 'babel-loader',
+      //     options: {
+      //       presets: [['@babel/preset-env', { targets: 'defaults' }]]
+      //     }
+      //   }
+      // }
     ]
   }
 }
