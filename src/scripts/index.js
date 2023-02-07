@@ -1,3 +1,5 @@
 import '../scss/main.scss'
+import { App } from './modules/index'
 
-console.log('name')
+const appInit = new App()
+appInit.run()

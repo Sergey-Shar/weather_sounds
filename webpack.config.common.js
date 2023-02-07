@@ -32,12 +32,14 @@ module.exports = {
         use: [MiniCssExtractPlugin.loader, 'css-loader']
       },
       {
-        test: /\.(woff|woff2|eot|ttf|otf)$/i,
-        type: 'asset/resource'
-      },
-      {
-        test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
-        type: 'asset/resource'
+        test: /\.(mp3|png|svg|jpg|jpeg|gif|woff|woff2|eot|ttf|otf)$/i,
+        loader: 'file-loader',
+        options: {
+          name: '[name].[contenthash].[ext]',
+          outputPath: 'static/assets/',
+          publicPath: 'static/assets/',
+          postTransformPublicPath: (p) => `__webpack_public_path__ + ${p}`
+        }
       },
       {
         test: /\.s[ac]ss$/i,
@@ -54,17 +56,17 @@ module.exports = {
           },
           'sass-loader'
         ]
+      },
+      {
+        test: /\.m?js$/,
+        exclude: /(node_modules|bower_components)/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: [['@babel/preset-env', { targets: 'defaults' }]]
+          }
+        }
       }
-      // {
-      //   test: /\.m?js$/,
-      //   exclude: /(node_modules|bower_components)/,
-      //   use: {
-      //     loader: 'babel-loader',
-      //     options: {
-      //       presets: [['@babel/preset-env', { targets: 'defaults' }]]
-      //     }
-      //   }
-      // }
     ]
   }
 }

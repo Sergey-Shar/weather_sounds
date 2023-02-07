@@ -1,3 +1,8 @@
 @import './core/fonts';
 @import './core/variables';
-@import './core/common'
+@import './core/reset';
+
+@import './components/sounds-block';
+@import './components/title';
+@import './components/container';
+@import './components/sound-button';
