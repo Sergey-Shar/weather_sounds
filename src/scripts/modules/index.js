@@ -1,2 +1,2 @@
-import { App } from './app'
-export { App }
+import { AudioPlayer } from './audioPlayer'
+export { AudioPlayer }

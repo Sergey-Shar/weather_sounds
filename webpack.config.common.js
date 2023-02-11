@@ -5,7 +5,9 @@ const path = require('path')
 const DIST = 'dist'
 
 module.exports = {
-  entry: './src/scripts/index.js',
+  entry: {
+    index: './src/scripts/index.js'
+  },
   output: {
     filename: '[name].[contenthash].js',
     path: path.resolve(__dirname, DIST),
@@ -32,13 +34,31 @@ module.exports = {
         use: [MiniCssExtractPlugin.loader, 'css-loader']
       },
       {
-        test: /\.(mp3|png|svg|jpg|jpeg|gif|woff|woff2|eot|ttf|otf)$/i,
-        loader: 'file-loader',
-        options: {
-          name: '[name].[contenthash].[ext]',
-          outputPath: 'static/assets/',
-          publicPath: 'static/assets/',
-          postTransformPublicPath: (p) => `__webpack_public_path__ + ${p}`
+        test: /\.(woff|woff2|eot|ttf|otf)$/i,
+        type: 'asset/resource',
+        generator: {
+          filename: 'static/fonts/[name][ext]'
+        }
+      },
+      {
+        test: /\.(jpe?g|png|webp|gif)$/i,
+        type: 'asset/resource',
+        generator: {
+          filename: 'static/assets/image/[name][ext]'
+        }
+      },
+      {
+        test: /\.svg$/i,
+        type: 'asset/resource',
+        generator: {
+          filename: 'static/assets/icons/[name][ext]'
+        }
+      },
+      {
+        test: /\.mp3$/i,
+        type: 'asset/resource',
+        generator: {
+          filename: 'static/assets/sounds/[name][ext]'
         }
       },
       {
@@ -68,5 +88,9 @@ module.exports = {
         }
       }
     ]
+  },
+  experiments: {
+    // lazyCompilation: true,
+    topLevelAwait: true
   }
 }

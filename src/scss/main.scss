@@ -1,8 +1,12 @@
 @import './core/fonts';
 @import './core/variables';
+@import './core/mixsins';
 @import './core/reset';
 
 @import './components/sounds-block';
 @import './components/title';
 @import './components/container';
 @import './components/sound-button';
+@import './components/box-buttons';
+@import './components/box-controller';
+@import './components/volume-control';

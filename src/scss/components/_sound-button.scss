@@ -1,12 +1,25 @@
-.sound-button{
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    height: 250px;
-    width: 250px;
-    background-position: center;
-    background-size: cover;
-    img{
-        height: 70px;
-    }
+.sound-button {
+	border: none;
+	border-radius: 10px;
+	cursor: pointer;
+	height: 150px;
+	width: 150px;
+	background-color: $bg-button;
+	background-position: center;
+	background-size: cover;
+	box-shadow: $box-shadow;
+	transition: transform 1s;
+	img {
+		height: 70px;
+	}
+	&:hover {
+		transform: scale(103%);
+	}
+	&.active {
+		@include focus-outline();
+		transform: scale(103%);
+	}
+	&:focus {
+		@include focus-outline();
+	}
 }

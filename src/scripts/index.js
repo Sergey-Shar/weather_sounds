@@ -1,5 +1,5 @@
 import '../scss/main.scss'
-import { App } from './modules/index'
+import { AudioPlayer } from './modules/index'
 
-const appInit = new App()
-appInit.run()
+const app = new AudioPlayer()
+app.render()

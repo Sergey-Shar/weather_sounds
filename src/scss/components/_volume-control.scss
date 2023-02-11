@@ -1,0 +1,59 @@
+
+.volume-controller {
+	& {
+		&,
+		&::-webkit-slider-thumb,
+		&::-webkit-slider-runnable-track {
+			-webkit-appearance: none;
+		}
+
+		--val: 50;
+		--pos: calc(#{0.5 * $thumb-d} + 0.01 * var(--val) * (100% - #{$thumb-d}));
+		padding: 0;
+		width: $track-w;
+		max-width: 20%;
+		height: 2 * $thumb-d;
+		min-height: 2 * $track-h;
+		border-radius: 0.625em;
+		background: none;
+		font: inherit;
+		filter: grayscale(0.5);
+		cursor: pointer;
+
+		&::-webkit-slider-runnable-track {
+			@include track(1);
+		}
+		&::-moz-range-track {
+			@include track();
+		}
+		&::-ms-track {
+			@include track();
+			color: transparent;
+		}
+
+		&::-moz-range-progress {
+			@include fill();
+		}
+		&::-ms-fill-lower {
+			@include fill();
+		}
+
+		&::-webkit-slider-thumb {
+			@include thumb(calc(0.5 * (#{$track-h} - #{$thumb-d})));
+		}
+		&::-moz-range-thumb {
+			@include thumb();
+		}
+		&::-ms-thumb {
+			@include thumb();
+		}
+
+		&::-ms-tooltip {
+			display: none;
+		}
+
+		&:focus {
+		@include focus-outline()
+		}
+	}
+}

@@ -1,0 +1,41 @@
+@mixin track($f: 0) {
+	border: none;
+	width: 100%;
+	height: $track-h;
+	border-radius: $track-r;
+	box-shadow: 0 1px #4e4f51;
+	background: $track-bg;
+
+	@if $f > 0 {
+		.box-controller & {
+			background: $progr-bg 0 / var(--pos) 100% no-repeat, $track-bg;
+		}
+	}
+}
+
+@mixin fill() {
+	height: $track-h;
+	border-radius: $track-r 0 0 $track-r;
+	background: $progr-bg;
+}
+
+@mixin thumb($m: 0) {
+	margin-top: $m;
+	width: $thumb-d;
+	height: $thumb-d;
+	border-radius: 50%;
+	box-shadow: 0 0.25em 0.25em #070709, 0 0.125em 0.5em #070709;
+	background: radial-gradient(
+		circle at 75% 72%,
+		#d7d7d7,
+		#a9a9a9 0.75 * $thumb-r,
+		#858585 $thumb-r,
+		#d7d7d7
+	);
+	cursor: ew-resize;
+}
+
+@mixin focus-outline(){
+    outline: solid 0 transparent;
+	filter: drop-shadow(0 0 5px #398ff2);
+}

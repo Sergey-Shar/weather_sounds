@@ -8,6 +8,10 @@ module.exports = merge(configCommon, {
   devtool: 'source-map',
   plugins: [],
   optimization: {
+    minimize: true,
     minimizer: [new CssMinimizerPlugin(), new TerserPlugin()]
+  },
+  experiments: {
+    lazyCompilation: true
   }
 })

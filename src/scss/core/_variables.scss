@@ -1,1 +1,21 @@
 $main-fonts: 'Roboto', sans-serif;
+
+$track-w: 20em;
+$track-h: 0.5em;
+$track-r: 0.5 * $track-h;
+$track-bg: linear-gradient(#e4e5e7, #fffefc 70%, #bfc2c7);
+$progr-bg: linear-gradient(#b3d6ec, #368aec 70%, #398ff2);
+$thumb-d: 1em;
+$thumb-r: 0.5 * $thumb-d;
+
+$bg-button: rgb(12, 31, 42);
+$bg-body: rgb(11, 25, 33);
+
+$box-shadow: inset rgba(0, 0, 0, 0.6) 0 -3px 8px,
+	inset rgba(255, 255, 255, 0.05) 0 3px 8px, rgba(0, 0, 0, 0.8) 0 3px 8px -5px;
+
+$box-shadow-active: inset rgba(122, 118, 118, 0.6) 0 -3px 8px,
+	inset rgba(122, 118, 118, 0.6) 0 3px 8px,
+	rgba(122, 118, 118, 0.6) 0 3px 8px -5px;
+
+$text-shadow: 1px 1px 1px rgb(30, 7, 7), -1px 1px 1px rgb(151, 135, 135);
