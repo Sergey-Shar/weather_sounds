@@ -90,7 +90,6 @@ module.exports = {
     ]
   },
   experiments: {
-    lazyCompilation: true,
     topLevelAwait: true
   }
 }
