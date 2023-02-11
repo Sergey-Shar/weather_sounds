@@ -9,8 +9,8 @@ module.exports = merge(configCommon, {
   optimization: {
     minimize: true,
     minimizer: [new CssMinimizerPlugin(), new TerserPlugin()]
-  },
-  experiments: {
-    lazyCompilation: true
   }
+  // experiments: {
+  //   lazyCompilation: true
+  // }
 })
