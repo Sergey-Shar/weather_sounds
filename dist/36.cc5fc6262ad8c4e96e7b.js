@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkweather_sounds=self.webpackChunkweather_sounds||[]).push([[36],{36:(s,e,t)=>{s.exports=t.p+"static/assets/sounds/winter.mp3"}}]);
