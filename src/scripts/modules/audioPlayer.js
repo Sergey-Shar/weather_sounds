@@ -1,6 +1,6 @@
 import { setValueFromInput } from '../utils/index'
 import { colors } from '../constants/index'
-const { default: assetsData } = await import('../../assets/index')
+import assetsData from '../../assets/index'
 const { AUDIO_SPEAKER_FILL } = colors
 export class AudioPlayer {
   #soundElement
