@@ -1,4 +1,6 @@
 .sound-button {
+	position: relative;
+	z-index: 10;
 	border: none;
 	border-radius: 10px;
 	cursor: pointer;
@@ -10,7 +12,9 @@
 	box-shadow: $box-shadow;
 	transition: transform 1s;
 	img {
-		height: 70px;
+		position: relative;
+		z-index: -10;
+		height: 40px;
 	}
 	&:hover {
 		transform: scale(103%);
