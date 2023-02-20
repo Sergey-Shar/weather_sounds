@@ -5,29 +5,37 @@ const path = require('path')
 
 module.exports = {
   entry: {
-    index: './src/scripts/index.js'
+    index: './src/scripts/index.ts'
   },
   output: {
     filename: '[name].[contenthash].js',
-    path: path.resolve(__dirname, 'public'),
+    path: path.resolve(__dirname, 'dist'),
     clean: true
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, 'dist/index.html')
+      template: path.resolve(__dirname, 'public/index.html')
     }),
     new MiniCssExtractPlugin(),
     new CopyPlugin({
       patterns: [
         {
-          from: path.resolve(__dirname, 'dist/favicon.ico'),
+          from: path.resolve(__dirname, 'public/favicon.ico'),
           to: path.resolve(__dirname, 'public')
         }
       ]
     })
   ],
+  resolve: {
+    extensions: ['.ts', '.js']
+  },
   module: {
     rules: [
+      {
+        test: /\.tsx?$/,
+        use: 'ts-loader',
+        exclude: /node_modules/
+      },
       {
         test: /\.css$/i,
         use: [MiniCssExtractPlugin.loader, 'css-loader']
